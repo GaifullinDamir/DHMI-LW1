@@ -9,17 +9,31 @@ import { GREETING_ROUTE, HYPHOTHESIS_ONE_ROUTE, HYPHOTHESIS_TWO_ROUTE, RESULTS_R
 
 
 function App() {
-  const {username, setUsername} = useState('');
-  const {groupNumber, setGroupNumber} = useState('');
-  const {resultFirst, setResultFirst} = useState('');
-  const {resultSecond, setResultSecond} = useState('');
+  
+  const [username, setUsername] = useState('');
+  const [groupNumber, setGroupNumber] = useState('');
+  const [resultFirst, setResultFirst] = useState('');
+  const [resultSecond, setResultSecond] = useState('');
+
+  const handleChangeUsername = (value) => {
+    setUsername(value);
+  };
+  const handleChangeGroupNumber = (value) => {
+    setGroupNumber(value);
+  };
+  const handleChangeResultFirst = (value) => {
+    setResultFirst(value);
+  };
+  const handleChangeResultSecond = (value) => {
+    setResultSecond(value);
+  };
 
   return (
     <BrowserRouter>
       <Routes>
-        <Route path={GREETING_ROUTE} element={<Greeting setUsername={setUsername} setGroupNumber={setGroupNumber}/>} />
-        <Route path={HYPHOTHESIS_ONE_ROUTE} element={<HyphothesisOne setResultFirst={setResultFirst}/>} />
-        <Route path={HYPHOTHESIS_TWO_ROUTE} element={<HyphothesisTwo setResultSecond={setResultSecond}/>} />
+        <Route path={GREETING_ROUTE} element={<Greeting handleChangeUsername={handleChangeUsername} handleChangeGroupNumber={handleChangeGroupNumber}/>} />
+        <Route path={HYPHOTHESIS_ONE_ROUTE} element={<HyphothesisOne setResultFirst={handleChangeResultFirst}/>} />
+        <Route path={HYPHOTHESIS_TWO_ROUTE} element={<HyphothesisTwo setResultSecond={handleChangeResultSecond}/>} />
         <Route path={RESULTS_ROUTE} element={<Results data={{username, groupNumber, resultFirst, resultSecond}}/>} />
       </Routes>
     </BrowserRouter>
