@@ -1,7 +1,12 @@
-test-item {
-    font-size: 36px;
-    color: #ffffffe2;
-    &_success {
-        color:#ffffffab;
+.test{
+    &__container{
+
+    }
+    &__item {
+        font-size: 36px;
+        color: #bdbdbde2;
+        &_dark {
+            color: #000000;
+        }
     }
 }

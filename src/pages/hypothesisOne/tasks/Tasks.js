@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 
 
-const TestFirstStage = ({rightAnswers, 
+const Tasks = ({rightAnswers, 
         setRightAnswers, 
         symbols,
         tasksCounter,
