@@ -1,9 +1,13 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
+import TestFirstStage from './TestFirstStage';
 
-const HyphothesisOne = () => {
+const HyphothesisOne = ({resultFirst, setResult}) => {
+
     return(
         <div>
-            HyphothesisOne
+            <div className="test">
+                <TestFirstStage resultFirst={resultFirst} setResult={setResult}/>
+            </div>
         </div>
     )
 };

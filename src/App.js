@@ -32,8 +32,8 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path={GREETING_ROUTE} element={<Greeting handleChangeUsername={handleChangeUsername} handleChangeGroupNumber={handleChangeGroupNumber}/>} />
-        <Route path={HYPHOTHESIS_ONE_ROUTE} element={<HyphothesisOne setResultFirst={handleChangeResultFirst}/>} />
-        <Route path={HYPHOTHESIS_TWO_ROUTE} element={<HyphothesisTwo setResultSecond={handleChangeResultSecond}/>} />
+        <Route path={HYPHOTHESIS_ONE_ROUTE} element={<HyphothesisOne resultFirst = {resultFirst} handleChangeResultFirst={handleChangeResultFirst}/>} />
+        <Route path={HYPHOTHESIS_TWO_ROUTE} element={<HyphothesisTwo handleChangeResultSecond={handleChangeResultSecond}/>} />
         <Route path={RESULTS_ROUTE} element={<Results data={{username, groupNumber, resultFirst, resultSecond}}/>} />
       </Routes>
     </BrowserRouter>
